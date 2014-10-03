@@ -63,28 +63,21 @@ if(MobFox) MobFox.createBanner( {
 	position:MobFox.AD_POSITION.BOTTOM_CENTER, 
 	autoShow:true} );
 
-// or, show a rect ad at bottom in overlap mode
-if(MobFox) MobFox.createBanner( {
-	adId: publisherId, 
-	overlap:true, 
-	position:MobFox.AD_POSITION.BOTTOM_CENTER, 
-	autoShow:true} );
-
-// or, show any size at any position
-if(MobFox) MobFox.createBanner( {
-	adId: publisherId, 
-	width:200, height:200, 
-	overlap:true, 
-	position:MobFox.AD_POSITION.POS_XY, x:100, y:200, 
-	autoShow:true} );
-
-```
-
 Step 3: Prepare an interstitial, and show it when needed
 
 ```javascript
 // preppare and load ad resource in background, e.g. at begining of game level
 if(MobFox) MobFox.prepareInterstitial( {adId:publisherId, autoShow:false} );
+
+// show the interstitial later, e.g. at end of game level
+if(MobFox) MobFox.showInterstitial();
+```
+
+Step 4: Prepare an video Ad, and show it when needed
+
+```javascript
+// preppare and load ad resource in background, e.g. at begining of game level
+if(MobFox) MobFox.prepareInterstitial( {adId:publisherId, enableVideo:true, autoShow:false} );
 
 // show the interstitial later, e.g. at end of game level
 if(MobFox) MobFox.showInterstitial();
