@@ -149,9 +149,14 @@ Then set the license key in options (either API setOptions, or createBanner, or 
 
 With impressive video Ads, MobFox Plugin Pro is one of the best choice for HTML5/Cordova/PhoneGap/XDK/Construct2 app/games.
 
-More Cordova plugins by Raymond Xie, [click here](http://floatinghotpot.github.io/).
+## See Also ##
+
+* [AdMob Plugin Pro](https://github.com/floatinghotpot/cordova-admob-pro), enhanced Google AdMob plugin.
+* [iAd Plugin](https://github.com/floatinghotpot/cordova-plugin-iad), Apple iAd service. 
+* [FlurryAds Plugin](https://github.com/floatinghotpot/cordova-plugin-flurry), Yahoo Flurry Ads service.
+
+More Cordova/PhoneGap plugins by Raymond Xie, [click here](http://floatinghotpot.github.io/).
 
 Project outsourcing and consulting service is also available. 
 Please [contact us](http://floatinghotpot.github.io) if you have the business needs.
-
 
