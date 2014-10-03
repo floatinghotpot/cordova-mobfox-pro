@@ -6,7 +6,7 @@
 	version="1.0.0">
       
     <name>MobFox Ad</name>
-	<description>Cordova/PhoneGap Plugin for MobFox Ad</description>
+	<description>Cordova/PhoneGap plugin for MobFox, support Banner, Interstitial and Video Ad. Support many Ad networks with server-side integration to maximize revenue.</description>
 	<author>Liming Xie</author>
 	<license>MIT</license>
 	<keywords>ad,admob,google,play,services,iad,mobfox</keywords>
