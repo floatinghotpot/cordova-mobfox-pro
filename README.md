@@ -144,12 +144,12 @@ With impressive video Ads, MobFox Plugin Pro is one of the best choice for HTML5
 
 ## See Also ##
 
-* [AdMob Plugin Pro](https://github.com/floatinghotpot/cordova-admob-pro), enhanced Google AdMob plugin.
+* [AdMob Plugin Pro](https://github.com/floatinghotpot/cordova-admob-pro), enhanced Google AdMob plugin, easy API and more features.
+* [MobFox Plugin Pro](https://github.com/floatinghotpot/cordova-mobfox-pro), enhanced MobFox plugin, support video Ad and many other Ad network with server-side integration.
 * [iAd Plugin](https://github.com/floatinghotpot/cordova-plugin-iad), Apple iAd service. 
 * [FlurryAds Plugin](https://github.com/floatinghotpot/cordova-plugin-flurry), Yahoo Flurry Ads service.
 
 More Cordova/PhoneGap plugins by Raymond Xie, [click here](http://floatinghotpot.github.io/).
 
-Project outsourcing and consulting service is also available. 
-Please [contact us](http://floatinghotpot.github.io) if you have the business needs.
+Project outsourcing and consulting service is also available. Please [contact us](http://floatinghotpot.github.io) if you have the business needs.
 
