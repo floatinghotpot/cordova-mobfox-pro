@@ -62,6 +62,7 @@ if(MobFox) MobFox.createBanner( {
 	adId: publisherId, 
 	position:MobFox.AD_POSITION.BOTTOM_CENTER, 
 	autoShow:true} );
+```
 
 Step 3: Prepare an interstitial, and show it when needed
 
