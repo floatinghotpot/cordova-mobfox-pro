@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="com.rjfun.cordova.mobfox"
-	version="1.0.1">
+	version="1.0.2">
       
     <name>MobFox Ad</name>
 	<description>Cordova/PhoneGap plugin for MobFox, support Banner, Interstitial and Video Ad. Support many Ad networks with server-side integration to maximize revenue.</description>
@@ -14,7 +14,7 @@
     <issue>https://github.com/floatinghotpot/cordova-mobfox/issues</issue>
 
 	<engines>
-	    <engine name="cordova" version=">=3.5" />
+	    <engine name="cordova" version=">=3.0" />
 	</engines>
 
     <js-module src="www/MobFox.js" name="MobFox">

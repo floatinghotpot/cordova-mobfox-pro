@@ -58,16 +58,9 @@ button {
 				return;
 			}
 
-			initAd();
-
-			// display the banner at startup
-			MobFox.createBanner(publisherId, function() {
-			}, function(data) {
-				alert(JSON.stringify(data));
-			});
-		}
-		function initAd() {
-			var defaultOptions = {
+			registerAdEvents();
+			
+			MobFox.setOptions({
 				// adId: publisherId,
 				isTesting: true,
 				// width: integer,
@@ -76,17 +69,15 @@ button {
 				// x: integer,		// valid when set position to 0 / POS_XY
 				// y: integer,		// valid when set position to 0 / POS_XY
 				// autoShow: true // auto show interstitial ad when loaded, set to false if prepare/show
-			};
-			MobFox.setOptions(defaultOptions);
-			registerAdEvents();
+			});
+			
+			createSelectedBanner();
 		}
 		// optional, in case respond to events or handle error
 		function registerAdEvents() {
-			document.addEventListener('onBannerFailedToReceive',
-					function(data) {
-						alert('error: ' + data.error + ', reason: '
-								+ data.reason);
-					});
+			document.addEventListener('onBannerFailedToReceive', function(data) {
+				alert('error: ' + data.error + ', reason: ' + data.reason);
+			});
 			document.addEventListener('onBannerReceive', function() {
 			});
 			document.addEventListener('onBannerPresent', function() {
@@ -96,11 +87,9 @@ button {
 			document.addEventListener('onBannerDismiss', function() {
 			});
 
-			document.addEventListener('onInterstitialFailedToReceive',
-					function(data) {
-						alert('error: ' + data.error + ', reason: '
-								+ data.reason);
-					});
+			document.addEventListener('onInterstitialFailedToReceive', function(data) {
+				alert('error: ' + data.error + ', reason: ' + data.reason);
+			});
 			document.addEventListener('onInterstitialReceive', function() {
 			});
 			document.addEventListener('onInterstitialPresent', function() {
