@@ -9,7 +9,6 @@ Highlights:
 - [x] Multiple banner size, also support custom size.
 - [x] Fixed and overlapped mode.
 - [x] Auto fit on orientation change.
-- [x] Actively maintained, prompt support.
 
 Compatible with:
 
@@ -31,6 +30,22 @@ Add a Third-Party Plugin -> Get Plugin from the Web, input:
 Name: MobFoxPluginPro
 Plugin ID: com.rjfun.cordova.mobfox
 [x] Plugin is located in the Apache Cordova Plugins Registry
+```
+## Quick Start ##
+
+Before using the plugin in your project, please verify the plugin by build the demo index.html coming with the plugin:
+
+```bash
+cordova create testmobfox com.rjfun.testmobfox testmobfox;
+cd testmobfox;
+cordova platform add android;
+cordova platform add ios;
+cordova plugin add com.rjfun.cordova.mobfox;
+rm -r www/*;
+cp -r plugins/com.rjfun.cordova.mobfox/test/* www/;
+cordova prepare;
+cordova run android;
+cordova run ios;
 ```
 
 ## Quick Start Example Code ##

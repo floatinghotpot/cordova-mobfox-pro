@@ -24,16 +24,6 @@ If use with Cordova CLI:
 cordova plugin add com.rjfun.cordova.mobfox
 ```
 
-If use with Intel XDK:
-Project -> CORDOVA 3.X HYBRID MOBILE APP SETTINGS -> PLUGINS AND PERMISSIONS -> Third-Party Plugins ->
-Add a Third-Party Plugin -> Get Plugin from the Web, input:
-```
-Name: MobFoxPluginPro
-Plugin ID: com.rjfun.cordova.mobfox
-[x] Plugin is located in the Apache Cordova Plugins Registry
-```
-## How to Use ##
-
 Add the plugin to your cordova project with [Cordova CLI](https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface):
 ```bash
 cordova create <project_folder> com.<company_name>.<app_name> <AppName>
