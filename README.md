@@ -134,10 +134,10 @@ Check the [test/index.html] (https://github.com/floatinghotpot/cordova-mobfox-pr
 
 ## Screenshots ##
 
-iPhone Banner | iPhone Medium Rect
--------|---------------
-![ScreenShot](docs/iphone_banner.jpg) | ![ScreenShot](docs/iphone_interstitial.jpg)
- any size | overlap:
+Banner | Interstitial | Video
+-------|------------|--------
+![ScreenShot](docs/banner.jpg) | ![ScreenShot](docs/interstitial.jpg) | ![ScreenShot](docs/video.jpg)
+ any size | overlap
 ![ScreenShot](docs/any_size.jpg) | ![ScreenShot](docs/overlap.jpg)
 
 ## Credits ##
