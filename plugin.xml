@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="com.rjfun.cordova.mobfox"
-	version="1.0.3">
+	version="1.1.0">
       
     <name>MobFox Ad</name>
 	<description>Cordova/PhoneGap plugin for MobFox, support Banner, Interstitial and Video Ad. Support many Ad networks with server-side integration to maximize revenue.</description>
@@ -22,6 +22,8 @@
     </js-module>
 
     <dependency id="com.google.playservices" version=">=19.0.0"/>
+    <dependency id="com.google.admobsdk-ios" version=">=6.12.0"/>
+    <dependency id="com.mobfox.sdk" version=">=6.0.0"/>
 
     <!-- android -->
     <platform name="android">
@@ -30,28 +32,7 @@
                 <param name="android-package" value="com.rjfun.cordova.mobfox.MobFox"/>
             </feature>
         </config-file>
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-			<activity android:name="com.adsdk.sdk.banner.InAppWebView" 
-			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
-			
-			<activity android:name="com.adsdk.sdk.video.RichMediaActivity" 
-			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"    
-			android:hardwareAccelerated="false" />
-			
-			<activity android:name="com.adsdk.sdk.mraid.MraidBrowser" 
-			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
-          </config-file>
-        <config-file target="AndroidManifest.xml" parent="/*">
-	        <uses-permission android:name="android.permission.INTERNET" />
-			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-			<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
-          </config-file>
-          
         <source-file src="src/android/cordova-mobfox.jar" target-dir="libs" />
-		
-        <source-file src="src/android/AdSdk_5.2.1.jar" target-dir="libs" />
-        <source-file src="src/android/simple-xml-2.7.1.jar" target-dir="libs" />
 		
      </platform>
      
@@ -66,26 +47,6 @@
          <source-file src="src/ios/CDVMobFox.m" />
          <header-file src="src/ios/MobFoxAds.h" />
          <source-file src="src/ios/libMobFoxAds.a" framework="true" />
-         
-         <framework src="src/ios/MobFox.framework" custom="true"/>
-         <resource-file src="src/ios/MRAID.bundle" />
-         <source-file src="src/ios/libGoogleAdMobAds.a" framework="true" />
-		
-        <framework src="AudioToolbox.framework"/>
-        <framework src="AVFoundation.framework"/>
-        <framework src="iAd.framework"/>
-        <framework src="StoreKit.framework"/>
-        <framework src="SystemConfiguration.framework"/>
-        <framework src="MessageUI.framework"/>
-        <framework src="CoreTelephony.framework"/>
-        <framework src="EventKit.framework"/>
-        <framework src="EventKitUI.framework"/>
-        <framework src="AdSupport.framework"/>
-        <framework src="UIKit.framework"/>
-        <framework src="CoreLocation.framework"/>
-        <framework src="MediaPlayer.framework"/>
-        <framework src="Foundation.framework"/>
-        <framework src="CoreGraphics.framework"/>
 	</platform>
 
 </plugin>
