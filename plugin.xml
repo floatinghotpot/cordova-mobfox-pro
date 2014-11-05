@@ -21,8 +21,6 @@
         <clobbers target="window.MobFox" />
     </js-module>
 
-    <dependency id="com.google.playservices" version=">=19.0.0"/>
-    <dependency id="com.google.admobsdk-ios" version=">=6.12.0"/>
     <dependency id="com.mobfox.sdk" version=">=6.0.0"/>
 
     <!-- android -->
