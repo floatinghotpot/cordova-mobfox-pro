@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="com.rjfun.cordova.mobfox"
-	version="2.0.0">
+	version="2.0.1">
       
     <name>MobFox Ad</name>
 	<description>Cordova/PhoneGap plugin for MobFox, support Banner, Interstitial and Video Ad. Support many Ad networks with server-side integration to maximize revenue.</description>
@@ -21,8 +21,8 @@
         <clobbers target="window.MobFox" />
     </js-module>
 
-	<dependency id="com.rjfun.cordova.ad" version=">=1.0.0"/>
-    <dependency id="com.mobfox.sdk" version=">=6.0.0"/>
+	<dependency id="com.rjfun.cordova.ad"/>
+    <dependency id="com.mobfox.sdk"/>
 
     <!-- android -->
     <platform name="android">
@@ -31,7 +31,7 @@
                 <param name="android-package" value="com.rjfun.cordova.mobfox.MobFoxPlugin"/>
             </feature>
         </config-file>
-        <source-file src="src/android/cordova-mobfox.jar" target-dir="libs" />
+        <source-file src="src/android/MobFoxPlugin.java" target-dir="src/com/rjfun/cordova/mobfox" />
 		
      </platform>
      
@@ -42,7 +42,8 @@
                  <param name="ios-package" value="MobFoxPlugin" />
              </feature>
          </config-file>
-         <source-file src="src/ios/libCordovaMobFox.a" framework="true" compiler-flags="-force_load"/>
+         <header-file src="src/ios/MobFoxPlugin.h"/>
+         <source-file src="src/ios/MobFoxPlugin.m"/>
 	</platform>
 
 </plugin>
