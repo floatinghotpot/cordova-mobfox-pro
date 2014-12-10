@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="com.rjfun.cordova.mobfox"
-	version="2.0.1">
+	version="2.0.2">
       
     <name>MobFox Ad</name>
 	<description>Cordova/PhoneGap plugin for MobFox, support Banner, Interstitial and Video Ad. Support many Ad networks with server-side integration to maximize revenue.</description>
@@ -21,7 +21,7 @@
         <clobbers target="window.MobFox" />
     </js-module>
 
-	<dependency id="com.rjfun.cordova.ad"/>
+	<dependency id="com.rjfun.cordova.extension"/>
     <dependency id="com.mobfox.sdk"/>
 
     <!-- android -->

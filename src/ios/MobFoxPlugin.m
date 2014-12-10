@@ -26,7 +26,7 @@
 
 @property (assign) MobFoxAdType adTypeLoaded;
 
-- (CGSize) __parseAdSize:(NSString*)str;
+- (CGSize) __AdSizeFromString:(NSString*)str;
 
 @end
 
@@ -38,11 +38,8 @@
 {
     [super pluginInitialize];
 
+    self.adSize = CGSizeMake(320, 50);
     self.enableVideo = true;
-    
-    CGSize sz = {320,50};
-    self.adSize = sz;
-    
     self.adTypeLoaded = MobFoxAdTypeUnknown;
 }
 
@@ -64,12 +61,12 @@
             self.adSize = sz;
             
         } else {
-            self.adSize = [self __parseAdSize:str];
+            self.adSize = [self __AdSizeFromString:str];
         }
     }
 }
 
-- (CGSize) __parseAdSize:(NSString*)str
+- (CGSize) __AdSizeFromString:(NSString*)str
 {
     CGSize sz = {320,50};
     if ([str isEqualToString:@"BANNER"]) {
