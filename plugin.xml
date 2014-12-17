@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="com.rjfun.cordova.mobfox"
-	version="2.0.2">
+	version="2.1.0">
       
     <name>MobFox Ad</name>
 	<description>Cordova/PhoneGap plugin for MobFox, support Banner, Interstitial and Video Ad. Support many Ad networks with server-side integration to maximize revenue.</description>
@@ -22,7 +22,7 @@
     </js-module>
 
 	<dependency id="com.rjfun.cordova.extension"/>
-    <dependency id="com.mobfox.sdk"/>
+	<dependency id="com.google.cordova.admob"/>
 
     <!-- android -->
     <platform name="android">
@@ -33,6 +33,25 @@
         </config-file>
         <source-file src="src/android/MobFoxPlugin.java" target-dir="src/com/rjfun/cordova/mobfox" />
 		
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:name="com.adsdk.sdk.banner.InAppWebView" 
+			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+			
+			<activity android:name="com.adsdk.sdk.video.RichMediaActivity" 
+			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"    
+			android:hardwareAccelerated="false" />
+			
+			<activity android:name="com.adsdk.sdk.mraid.MraidBrowser" 
+			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+          </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+	        <uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+			<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+          </config-file>
+          
+        <source-file src="src/android/MobFoxAdSdk_6.0.0.jar" target-dir="libs" />
      </platform>
      
      <!-- ios -->
@@ -44,6 +63,24 @@
          </config-file>
          <header-file src="src/ios/MobFoxPlugin.h"/>
          <source-file src="src/ios/MobFoxPlugin.m"/>
+         
+        <framework src="src/ios/MobFox.framework" custom="true"/>
+        
+        <framework src="AudioToolbox.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="iAd.framework"/>
+        <framework src="StoreKit.framework"/>
+        <framework src="SystemConfiguration.framework"/>
+        <framework src="MessageUI.framework"/>
+        <framework src="CoreTelephony.framework"/>
+        <framework src="EventKit.framework"/>
+        <framework src="EventKitUI.framework"/>
+        <framework src="AdSupport.framework"/>
+        <framework src="UIKit.framework"/>
+        <framework src="CoreLocation.framework"/>
+        <framework src="MediaPlayer.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="CoreGraphics.framework"/>
 	</platform>
 
 </plugin>
