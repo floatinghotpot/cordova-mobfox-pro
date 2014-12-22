@@ -13,16 +13,34 @@ Highlights:
 
 Compatible with:
 
-* Cordova CLI, v3.5+
-* Intel XDK and Crosswalk, r1095+
-* IBM Worklight, v6.2+
+* [x] Cordova CLI, v3.5+
+* [x] Intel XDK and Crosswalk, r1095+
+* [x] IBM Worklight, v6.2+
+* [x] Google Mobile Chrome App
+* [x] Adobe PhoneGap Build, since 2014/12/9
 
 ## How to use? ##
 
-If use with Cordova CLI:
+* If use with Cordova CLI:
 ```
 cordova plugin add com.rjfun.cordova.mobfox
 ```
+
+* If use with PhoneGap Buid, just configure in config.xml:
+```javascript
+<gap:plugin name="com.rjfun.cordova.mobfox" source="plugins.cordova.io"/>
+```
+
+* If use with Intel XDK:
+Project -> CORDOVA 3.X HYBRID MOBILE APP SETTINGS -> PLUGINS AND PERMISSIONS -> Third-Party Plugins ->
+Add a Third-Party Plugin -> Get Plugin from the Web, input:
+```
+Name: MobFoxPluginPro
+Plugin ID: com.rjfun.cordova.mobfox
+[x] Plugin is located in the Apache Cordova Plugins Registry
+```
+
+## Quick start with cordova CLI ##
 
 Add the plugin to your cordova project with [Cordova CLI](https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface):
 ```bash
@@ -40,15 +58,6 @@ rm -r www/*; cp plugins/com.rjfun.cordova.mobfox/test/index.html www/
 cordova prepare; cordova run android; cordova run ios;
 
 // or import into Xcode / eclipse
-```
-
-If use with Intel XDK:
-Project -> CORDOVA 3.X HYBRID MOBILE APP SETTINGS -> PLUGINS AND PERMISSIONS -> Third-Party Plugins ->
-Add a Third-Party Plugin -> Get Plugin from the Web, input:
-```
-Name: AdMobPluginPro
-Plugin ID: com.rjfun.cordova.mobfox
-[x] Plugin is located in the Apache Cordova Plugins Registry
 ```
 
 ## Quick Start Example Code ##
@@ -126,20 +135,12 @@ MobFox.showInterstitial();
 > **Syntax**: document.addEventListener(event_name, callback);
 
 ```javascript
-// for banner Ad
-'onBannerFailedToReceive'
-'onBannerReceive'
-'onBannerPresent'
-'onBannerLeaveApp'
-'onBannerDismiss'
-    
-// for interstitial Ad    
-'onInterstitialFailedToReceive'
-'onInterstitialReceive'
-'onInterstitialPresent'
-'onInterstitialLeaveApp'
-'onInterstitialDismiss'
-```
+// for both banner and interstitial
+'onAdFailLoad'
+'onAdLoaded'
+'onAdPresent'
+'onAdLeaveapp'
+'onAdDismiss'
 
 ## Methods ##
 
@@ -299,45 +300,39 @@ MobFox.showInterstitial();
 
 ## Events ##
 
-### Banner Events ###
+All following events will come with a data param, with properties:
+* data.adNetwork, the Ad network name, like 'AdMob', 'Flurry', 'iAd', 'MobFox', etc.
+* data.adType, 'banner' or 'interstitial'
+* data.adEvent, the event name
 
-'onBannerFailedToReceive'
+'onAdFailLoad'
 > Triggered when failed to receive Ad. 
 ```javascript
-document.addEventListener('onBannerFailedToReceive',function(data){
+document.addEventListener('onAdFailLoad',function(data){
 	console.log( data.error + ',' + data.reason );
-	MobFox.hideBanner();
+	if(data.adType == 'banner') AdMob.hideBanner();
+	else if(data.adType == 'interstitial') interstitialIsReady = false;
 });
 ```
 
-'onBannerReceive'
+'onAdLoaded'
 > Triggered when Ad received.
 ```javascript
-document.addEventListener('onBannerReceive',function(data){
+document.addEventListener('onAdLoaded',function(data){
 	MobFox.showBanner();
 });
 MobFox.createBanner({
-	adId: "your_publisher_id_here",
+	adId: admobid.banner,
 	autoShow: false
 });
 ```
 
-'onBannerPresent'
+'onAdPresent'
 > Triggered when Ad will be showed on screen.
 
-'onBannerLeaveApp'
+'onAdLeaveApp'
 > Triggered when user click the Ad, and will jump out of your App.
 
-'onBannerDismiss'
+'onAdDismiss'
 > Triggered when dismiss the Ad and back to your App.
-
-### Interstitial Events ###
-
-- 'onInterstitialFailedToReceive'
-- 'onInterstitialReceive'
-- 'onInterstitialPresent'
-- 'onInterstitialLeaveApp'
-- 'onInterstitialDismiss'
-
-They are quite similiar to the events of banner Ad.
 

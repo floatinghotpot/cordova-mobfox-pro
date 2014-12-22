@@ -12,18 +12,25 @@ Highlights:
 
 Compatible with:
 
-* Cordova CLI, v3.5+
-* Intel XDK and Crosswalk, r1095+
-* IBM Worklight, v6.2+
+* [x] Cordova CLI, v3.5+
+* [x] Intel XDK and Crosswalk, r1095+
+* [x] IBM Worklight, v6.2+
+* [x] Google Mobile Chrome App
+* [x] Adobe PhoneGap Build, since 2014/12/9
 
 ## How to use? ##
 
-If use with Cordova CLI:
+* If use with Cordova CLI:
 ```
 cordova plugin add com.rjfun.cordova.mobfox
 ```
 
-If use with Intel XDK:
+* If use with PhoneGap Buid, just configure in config.xml:
+```javascript
+<gap:plugin name="com.rjfun.cordova.mobfox" source="plugins.cordova.io"/>
+```
+
+* If use with Intel XDK:
 Project -> CORDOVA 3.X HYBRID MOBILE APP SETTINGS -> PLUGINS AND PERMISSIONS -> Third-Party Plugins ->
 Add a Third-Party Plugin -> Get Plugin from the Web, input:
 ```
@@ -31,21 +38,25 @@ Name: MobFoxPluginPro
 Plugin ID: com.rjfun.cordova.mobfox
 [x] Plugin is located in the Apache Cordova Plugins Registry
 ```
-## Quick Start ##
 
-Before using the plugin in your project, please verify the plugin by build the demo index.html coming with the plugin:
+## Quick start with cordova CLI ##
 
+Add the plugin to your cordova project with [Cordova CLI](https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface):
 ```bash
-cordova create testmobfox com.rjfun.testmobfox testmobfox;
-cd testmobfox;
-cordova platform add android;
-cordova platform add ios;
-cordova plugin add com.rjfun.cordova.mobfox;
-rm -r www/*;
-cp -r plugins/com.rjfun.cordova.mobfox/test/* www/;
-cordova prepare;
-cordova run android;
-cordova run ios;
+cordova create <project_folder> com.<company_name>.<app_name> <AppName>
+cd <project_folder>
+cordova platform add android
+cordova platform add ios
+
+cordova plugin add com.rjfun.cordova.mobfox
+
+// copy the demo html file to www
+rm -r www/*; cp plugins/com.rjfun.cordova.mobfox/test/index.html www/
+
+// connect device or run in emulator
+cordova prepare; cordova run android; cordova run ios;
+
+// or import into Xcode / eclipse
 ```
 
 ## Quick Start Example Code ##
@@ -105,12 +116,14 @@ Methods:
 ```javascript
 // set default value for other methods
 setOptions(options, success, fail);
+
 // for banner
 createBanner(adId/options, success, fail);
 removeBanner();
 showBanner(position);
 showBannerAtXY(x, y);
 hideBanner();
+
 // for interstitial
 prepareInterstitial(adId/options, success, fail);
 showInterstitial();
