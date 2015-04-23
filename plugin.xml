@@ -2,16 +2,16 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	id="com.rjfun.cordova.mobfox"
+	id="cordova-plugin-mobfox"
 	version="6.0.8">
       
     <name>MobFox Ad</name>
-	<description>Cordova/PhoneGap plugin for MobFox, support Banner, Interstitial and Video Ad. Support many Ad networks with server-side integration to maximize revenue.</description>
+	<description>Cordova plugin for MobFox Ads to monetize hybrid apps</description>
 	<author>Liming Xie</author>
 	<license>MIT</license>
 	<keywords>ad,mobfox,rjfun</keywords>
-    <repo>https://github.com/floatinghotpot/cordova-mobfox.git</repo>
-    <issue>https://github.com/floatinghotpot/cordova-mobfox/issues</issue>
+    <repo>https://github.com/floatinghotpot/cordova-mobfox-pro.git</repo>
+    <issue>https://github.com/floatinghotpot/cordova-mobfox-pro/issues</issue>
 
 	<engines>
 	    <engine name="cordova" version=">=3.0" />
@@ -21,8 +21,8 @@
         <clobbers target="window.MobFox" />
     </js-module>
 
-	<dependency id="com.rjfun.cordova.extension"/>
-	<dependency id="com.google.cordova.admob"/>
+	<dependency id="cordova-plugin-extension"/>
+	<dependency id="cordova-plugin-admobpro"/>
 
     <!-- android -->
     <platform name="android">

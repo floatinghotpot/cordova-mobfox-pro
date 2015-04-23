@@ -1,0 +1,31 @@
+{
+  "name": "cordova-plugin-mobfox",
+  "version": "6.0.8",
+  "description": "Cordova Plugin for MobFox Ads to monetize hybrid apps.",
+  "cordova": {
+    "id": "cordova-plugin-mobfox",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/floatinghotpot/cordova-mobfox-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/floatinghotpot/cordova-mobfox-pro/issues"
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "ad",
+    "mobfox",
+    "rjfun"
+  ],
+  "author": {
+    "name": "Raymond Xie",
+    "email": "rjfun.mobile@gmail.com"
+  },
+  "license": "MIT"
+}
